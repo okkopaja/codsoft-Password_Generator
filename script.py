@@ -12,7 +12,7 @@ class GUI():
 
         root.title('Password Generator')
         root.geometry('600x300')
-        root.configure(bg='#1F1F1F')  # Dark theme
+        root.configure(bg='#1F1F1F')
         root.resizable(False, False)
 
         style = ttk.Style()
@@ -21,23 +21,19 @@ class GUI():
         style.configure("TButton", font=("Segoe UI", 11, "bold"), padding=6)
         style.map("TButton", background=[("active", "#2E8B57")])
 
-        # Title
         self.title_label = Label(text="Password Generator", font=("Segoe UI", 18, "bold"), bg="#1F1F1F", fg="#00CED1")
         self.title_label.pack(pady=(20, 10))
 
-        # Password length
         self.length_label = ttk.Label(root, text="Password Length:")
         self.length_label.pack()
         self.length_entry = ttk.Entry(root, textvariable=self.passwordlen, width=30)
         self.length_entry.pack(pady=5)
 
-        # Generated Password
         self.generated_label = ttk.Label(root, text="Generated Password:")
         self.generated_label.pack()
         self.generated_entry = ttk.Entry(root, textvariable=self.generatedpassword, width=30, foreground="#DC143C")
         self.generated_entry.pack(pady=5)
 
-        # Buttons
         self.button_frame = Frame(root, bg="#1F1F1F")
         self.button_frame.pack(pady=20)
 
